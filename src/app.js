@@ -14,6 +14,11 @@ var flash = require('express-flash');
 var session = require('express-session');
 var bodyParser = require('body-parser');
 
+
+var passport = require('passport');
+var session = require('express-session');
+
+
 var routes = require('./routes/app');
 var app = express();
 
@@ -28,6 +33,24 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(session({
+    secret: process.env.SECERT_SESSION_KEY,
+    resave: true,
+    saveUninitialized: false
+}))
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use(flash());
+app.use((req, res, next) => {
+    app.locals.success = req.flash('success')
+    app.locals.error = req.flash('error')
+    app.locals.errors = req.flash('errors')
+    res.locals.session = req.session;
+    res.locals.user = req.user;
+    next();
+});
 
 routes(app);
 
