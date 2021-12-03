@@ -1,0 +1,20 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#
+                SubjectID
+            </th>
+            <th scope="col">Ten mon hoc</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        {{#each rows}}
+        <tr>
+            <th scope="row">{{this.subjectID}}</th>
+            <td>{{this.subjectName}}</td>
+           
+        </tr>
+    {{/each}}
+    </tbody>
+</table>
