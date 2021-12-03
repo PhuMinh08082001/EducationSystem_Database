@@ -1,0 +1,40 @@
+<style>
+    .card{
+        justify-content:center;
+    }
+</style>
+{{#each rows}}
+<form action="/subject/edit" method="post">
+<div class="container">
+<div class="card border-success mb-3" style="max-width: 40rem; max-height : 1000px">
+     <div class="card-header bg-transparent border-success">
+        <input name="subjectName"  value="{{this.subjectName}}" class="">
+       </div>
+       
+    <div class="card-body text-success">
+        <h5 class="card-title">Course</h5>
+        <p class="card-text">
+            <input name="subjectID" type ="hidden" value="{{this.subjectID}}">
+            <div>
+                <input name="facultyID"  type="text" value="{{this.facultyID}}" class="">
+            </div>
+        </p>
+        <p class="card-text">
+            <div>
+                <input name="numOfCredits"  type="text" value="{{this.numOfCredits}}" class="">
+            </div>
+        </p>
+        <p class="card-text">
+        <div>
+            <input name="semester"  type="text" value="{{this.semester}}" class="">
+        </div>
+        </p>
+    </div>
+    <div class="card-footer bg-transparent border-success">
+        <button type="submit" class="btn btn-info">Save</button>
+        <a type="button" class="btn btn-info">Back to subject</a>
+    </div>
+</div>
+</div>
+</form>
+{{/each}}

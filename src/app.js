@@ -22,6 +22,9 @@ var session = require('express-session');
 var routes = require('./routes/app');
 var app = express();
 
+
+var handlerbar = require('./app/handlebarhelp/handlebarhelps');
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', '.hbs');

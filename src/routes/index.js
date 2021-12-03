@@ -11,7 +11,7 @@ initPassportLocal();
 
 router.get('/', function(req, res, next) {
 
-    res.render('index', { title: 'Express', user: req.user });
+    res.render('index', { title: 'Education App', user: req.user });
 });
 
 // router.get('/signup', function(req, res, next) {
