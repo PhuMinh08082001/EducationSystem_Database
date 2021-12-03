@@ -45,8 +45,10 @@
                 </thead>
                 <tbody>
                     {{#each rows}}
-                
+                     {{#if_eq this.semester ../semeste}} 
+                  
                     <tr>
+                       
                         <td>{{this.subjectID}}</td>
                         <td>{{this.subjectName}}</td>
                         <td>{{this.facultyID}}</td>
@@ -62,7 +64,7 @@
                                     class="material-icons">&#xE872;</i></a>
                         </td>
                     </tr>
-                
+                    {{/if_eq}}
                     {{/each}}
                 </tbody>
             </table>
