@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
         if (req.query.semester) {
             semester = req.query.semester;
         } else {
-            semester = semesters[0].semester;
+            semester = rows[0].semester;
         }
         subjectServices.getAllSemester(semester).then(async(semesters) => {
             try {
