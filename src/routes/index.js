@@ -9,5 +9,7 @@ router.get('/', function(req, res, next) {
 router.get('/signup', function(req, res, next) {
     res.render('signup/option', { layout: 'index' });
 });
-
+router.get('/login', function(req, res, next) {
+    res.render('signup/form');
+});
 module.exports = router;
