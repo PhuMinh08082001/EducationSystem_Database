@@ -37,8 +37,53 @@ let getAllStdOfClass = (subjectID, className, semester) => {
             reject(err);
         }
     });
+
+}
+
+
+
+
+let getFacultyID = () => {
+    return new Promise((resolve, reject) => {
+        try {
+            connection.query(
+                ' SELECT * FROM faculty',
+                function(err, rows) {
+                    if (err) {
+                        reject(err)
+                    }
+
+                    resolve(rows);
+                }
+            );
+        } catch (err) {
+            reject(err);
+        }
+    });
+}
+
+
+let getSemester = () => {
+    return new Promise((resolve, reject) => {
+        try {
+            connection.query(
+                ' SELECT distinct semester  FROM manageSubject',
+                function(err, rows) {
+                    if (err) {
+                        reject(err)
+                    }
+
+                    resolve(rows);
+                }
+            );
+        } catch (err) {
+            reject(err);
+        }
+    });
 }
 module.exports = {
     getAllTeachingClass: getAllTeachingClass,
-    getAllStdOfClass: getAllStdOfClass
+    getAllStdOfClass: getAllStdOfClass,
+    getFacultyID: getFacultyID,
+    getSemester: getSemester,
 };

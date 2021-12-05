@@ -1,0 +1,105 @@
+<style>
+    .card {
+        justify-content: center;
+    }
+    .card-container{
+        display: flex;
+        flex-direction: row;
+    }
+</style>
+
+<form action="/subject/add" method="post">
+    <div class="container">
+        <div class="card border-success mb-3" style="max-width: 40rem; max-height : 1000px">
+         
+            <div class="card-body text-success">
+                <h5 class="card-title">Course</h5>
+                <div class="card-container">
+                    <div>
+                        <p class="card-text">
+                        
+                        <div>
+                         Subject ID : 
+                        </div>
+                        </p>
+                        <p class="card-text" >
+                        <div style="margin-top:20px">
+                           Subject Name :
+                        </div>
+                        </p>
+                        <p class="card-text" style="margin-top:25px">
+                        <div>
+                           Falcuty ID : 
+                        </div>
+                        </p>
+
+                        <p class="card-text"  style="margin-top:19px">
+                        <div>
+                            Num Of Credits :
+                        </div>
+                        </p>
+
+                        <p class="card-text" style="margin-top:19px">
+                        <div>
+                        Semester :
+                        </div>
+                        </p>
+                    </div>
+               <div>
+                    <p class="card-text">
+                        
+                    <div>
+                        <input name="subjectID" type="text">
+                       
+                    </div>
+                    </p>
+                    <p class="card-text">
+                    <div>
+                        <input name="subjectName" type="text" class="">
+                     
+                    </div>
+                    </p>
+                    <p class="card-text">
+                    <div>
+                    <select name="facultyID" class="form-select" aria-label="Default select example">
+                        <option selected>select facultyID</option>
+                        {{#each rows}}         
+                        <option value="{{this.facultyID}}">{{this.facultyID}}</option>
+                        {{/each}}
+                    </select>
+                    </div>
+                    </p>
+             
+                <p class="card-text">
+                <div>
+                    <input name="numOfCredits" type="text" class="">
+           
+            </select>
+                </div>
+                </p>
+
+                <p class="card-text">
+                <div>
+                   
+                    <select name="semester" class="form-select" aria-label="Default select example">
+                        <option selected>select facultyID</option>
+                        {{#each semesters}}
+                        <option value="{{this.semester}}">{{this.semester}}</option>
+                        {{/each}}
+                        </select>
+                </div>
+                </p>
+             
+                </div>
+</div>
+            </div>
+            <div class="card-footer bg-transparent border-success">
+                <button type="submit" class="btn btn-info">Save</button>
+                <a type="button" class="btn btn-info">Back to subject</a>
+            </div>
+        
+        
+    
+        </div>
+    </div>
+</form>
