@@ -52,11 +52,11 @@ router.get('/regisSub', (req, res) => {
         }
         for (let i = 0; i < rows.length; i++) {
             managePointServices.checkExist(rows[i].subjectID, id, rows[i].semester).then(async(rows2) => {
-                if(rows2.length > 0) Object.assign(rows[i], {existed: "1"});
-                else Object.assign(rows[i], {existed: "0"});
+                if (rows2.length > 0) Object.assign(rows[i], { existed: "1" });
+                else Object.assign(rows[i], { existed: "0" });
             })
             managePointServices.checkExistLecturer(rows[i].subjectID, rows[i].semester).then(async(rows3) => {
-                if(rows3.length == 0) rows[i].existed = "2";
+                if (rows3.length == 0) rows[i].existed = "2";
                 console.log(rows[i].existed)
             })
         }
@@ -86,6 +86,8 @@ router.get('/regisSub/enroll/:subID/:stuID/:semester', function(req, res, next) 
         }
     })
 });
+
+
 
 
 module.exports = router;

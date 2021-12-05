@@ -17,9 +17,9 @@
     </button>
     <div class="dropdown-menu">
         {{#each semesters}}
-
+          
         <a class="dropdown-item" href="#" data-value="{{this.semester}}">{{this.semester}}</a>
-
+        
         {{/each}}
     </div>
 </div>
@@ -39,11 +39,13 @@
     </thead>
     <tbody>
         {{#each rows}}
-        <tr>
+            {{#if_eq this.semester ../semester}}
+        <tr>    
             <th scope="row">{{this.subjectID}}</th>
             <td>{{this.subjectName}}</td>
             <td>{{this.semester}}</td>
         </tr>
+            {{/if_eq}}
         {{/each}}
     </tbody>
 </table>
