@@ -14,12 +14,17 @@
 
 
                             <div class="btn-group">
+<form action="/subject/add" style="margin-right: 10px;">
+    <button type="submit" class="btn btn-info">Add Subject</button>
+</form>
+
                                 <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="false">
                                    {{#if semeste}}
                                       Hoc ki : {{semeste}}                                  
                                     {{/if}}
                                 </button>
+                               
                                 <div class="dropdown-menu">
                                     {{#each semesters}}
                                       
@@ -29,9 +34,7 @@
                                 </div>
                                 
                             </div>
-                        <form action="/subject/add">
-                             <button type="submit" class="btn btn-info">Add Subject</button>
-                        </form>
+                       
                         </div>
                     </div>
                 </div>
