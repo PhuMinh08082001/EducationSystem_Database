@@ -1,10 +1,11 @@
-<table class="table">
+<table class="table mytable">
     <thead>
         <tr>
             <th scope="col">#
-                SubjectID
+                Mã môn học
             </th>
-            <th scope="col">Ten mon hoc</th>
+            <th scope="col">Tên môn học</th>
+            <th scope="col">Học kỳ</th>
             
         </tr>
     </thead>
@@ -13,8 +14,8 @@
         <tr>
             <th scope="row">{{this.subjectID}}</th>
             <td>{{this.subjectName}}</td>
-           
+            <td>{{this.semester}}</td>
         </tr>
-    {{/each}}
+        {{/each}}
     </tbody>
 </table>
