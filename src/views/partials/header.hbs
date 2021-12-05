@@ -21,15 +21,14 @@
             </button>
             {{#if user.studentID}}
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="/student/viewSubject">Xem danh sach khoa hoc</a>
+                <a class="dropdown-item" href="/student/viewSubject">Xem danh sach mon hoc</a>
                 <a class="dropdown-item" href="/student/regisSub">Dang ki khoa hoc</a>
-                <a class="dropdown-item" href="#">Link 3</a>
+                
             </div>
             {{else if user.lecturerID}}
             <div class="dropdown-menu">
                 <a class="dropdown-item" href="#">Quan li sinh vien</a>
-                <a class="dropdown-item" href="#">Link 2</a>
-                <a class="dropdown-item" href="#">Link 3</a>
+          
             </div>
             {{else}}
             <div class="dropdown-menu">
