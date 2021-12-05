@@ -42,7 +42,7 @@ router.get('/viewSubject/:name', function(req, res) {
     var name = req.params.name;
     var semester = req.query.semester;
     managePointServices.getListClass(name, semester).then(async function(rows) {
-        res.render('pdt/viewClass', { user: req.user, rows: rows })
+        res.render('pdt/viewClass', { user: req.user, rows: rows , semester: semester})
     })
 
 
