@@ -70,9 +70,27 @@ let checkExist = (subjectID, studentID, semester) => {
         }
     });
 }
+let checkExistLecturer = (subjectID, semester) => {
+    return new Promise((resolve, reject) => {
+        try {
+            connection.query(
+                'SELECT * FROM teach WHERE(subjectID = ? AND semester = ?)', [subjectID, semester],
+                function(err, rows) {
+                    if (err) {
+                        reject(err)
+                    }
+                    resolve(rows);
+                }
+            );
+        } catch (err) {
+            reject(err);
+        }
+    });
+}
 module.exports = {
     getSubject: getSubject,
     insertNewRegister: insertNewRegister,
     checkExist: checkExist,
     getSemestersStudent: getSemestersStudent,
+    checkExistLecturer: checkExistLecturer
 };

@@ -58,9 +58,13 @@
                         <td>{{this.existed}}</td>
                         <td style="text-align: center;">
                             {{#if_eq this.existed 0}}
-                            <a href="/student/regisSub/enroll/{{this.subjectID}}/{{../user.studentID}}/{{this.semester}}" class="view" title="View" data-toggle="tooltip" style="cursor: pointer;"><i class="material-icons"><img src="https://cdn4.iconfinder.com/data/icons/basic-mobile-app-ui/50/04-31-add-user-512.png" style="height: 35px; width:35px"></i></a>
+                            <a href="/student/regisSub/enroll/{{this.subjectID}}/{{../user.studentID}}/{{this.semester}}" class="view" title="Đăng ký" data-toggle="tooltip" style="cursor: pointer;"><i class="material-icons"><img src="https://cdn4.iconfinder.com/data/icons/basic-mobile-app-ui/50/04-31-add-user-512.png" style="height: 35px; width:35px"></i></a>
                             {{else}}
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Eo_circle_light-blue_checkmark.svg/2048px-Eo_circle_light-blue_checkmark.svg.png" style="height: 35px;width:35px">
+                                {{#if_eq this.existed 1}}
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Eo_circle_light-blue_checkmark.svg/2048px-Eo_circle_light-blue_checkmark.svg.png" title="Đã đăng ký" style="height: 35px;width:35px">
+                                {{else}}
+                                <img src="http://cdn.onlinewebfonts.com/svg/img_274719.png" title="Chưa có giáo viên dạy" style="height: 35px;width:35px">
+                                {{/if_eq}}
                             {{/if_eq}}
                             
                         </td>
