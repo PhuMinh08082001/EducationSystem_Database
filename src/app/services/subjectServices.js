@@ -1,5 +1,24 @@
 var connection = require('../../config/db');
 
+
+let addSubject = (id, name, faculty, num, semester) => {
+    return new Promise((resolve, reject) => {
+        try {
+            connection.query(
+                'INSERT INTO `subject` (`subjectID`, `subjectName`, `facultyID`, `numOfCredits`, `semester`) VALUES (?, ?, ?, ?, ?) ', [id, name, faculty, num, semester],
+                function(err, rows) {
+                    if (err) {
+                        reject(err)
+                    }
+
+                    resolve(rows);
+                }
+            );
+        } catch (err) {
+            reject(err);
+        }
+    });
+}
 let getAllSubject = () => {
     return new Promise((resolve, reject) => {
         try {
@@ -169,5 +188,6 @@ module.exports = {
     getAllClassOfSub: getAllClassOfSub,
     getAllWeekOfClass: getAllWeekOfClass,
     getAllLecturerOfSubject: getAllLecturerOfSubject,
-    addNewWeekWithLec: addNewWeekWithLec
+    addNewWeekWithLec: addNewWeekWithLec,
+    addSubject: addSubject
 };
