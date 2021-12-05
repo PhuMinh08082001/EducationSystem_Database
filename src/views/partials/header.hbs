@@ -30,12 +30,19 @@
                 <a class="dropdown-item" href="#">Quan li sinh vien</a>
           
             </div>
-            {{else}}
+            {{/if}}
+           
+            {{#if_eq user.fullName  'Khoa Quan Li'}}
             <div class="dropdown-menu">
                 <a class="dropdown-item" href="/subject">Quan li mon hoc</a>
-                <a class="dropdown-item" href="#">Xem danh sach nhan vien</a>
+               
             </div>
-            {{/if}}
+            {{else}}
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="/pdt/viewSubject">Xem danh sach mon hoc</a>
+       
+            </div>
+            {{/if_eq}}
             
         </div>
         <form action='/logout' method='post'>

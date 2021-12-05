@@ -87,10 +87,30 @@ let checkExistLecturer = (subjectID, semester) => {
         }
     });
 }
+
+let getListClass = (name, semester) => {
+    return new Promise((resolve, reject) => {
+        try {
+            connection.query(
+                'select distinct subjectID, className from class where subjectID = ? and semester = ?', [name, semester],
+                function(err, rows) {
+                    console.log(this.sql)
+                    if (err) {
+                        reject(err)
+                    }
+                    resolve(rows);
+                }
+            );
+        } catch (err) {
+            reject(err);
+        }
+    });
+}
 module.exports = {
     getSubject: getSubject,
     insertNewRegister: insertNewRegister,
     checkExist: checkExist,
     getSemestersStudent: getSemestersStudent,
-    checkExistLecturer: checkExistLecturer
+    checkExistLecturer: checkExistLecturer.apply,
+    getListClass: getListClass,
 };

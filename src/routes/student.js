@@ -89,5 +89,4 @@ router.get('/regisSub/enroll/:subID/:stuID/:semester', function(req, res, next) 
 
 
 
-
 module.exports = router;

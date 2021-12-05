@@ -6,6 +6,7 @@ var usersRouter = require('./users');
 var subjectRouter = require('./subject');
 var studentRouter = require('./student');
 var lecturerRouter = require('./lecturer')
+var pdtRouter = require('./pdt');
 
 function routes(app) {
     app.use('/', indexRouter);
@@ -13,6 +14,7 @@ function routes(app) {
     app.use('/subject', subjectRouter);
     app.use('/student', studentRouter);
     app.use('/lecturer', lecturerRouter);
+    app.use('/pdt', pdtRouter);
 };
 
 module.exports = routes;
