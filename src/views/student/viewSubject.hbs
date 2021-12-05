@@ -1,3 +1,31 @@
+<style>
+    .semester{
+        display: flex;
+        justify-content: right;
+    }
+    .btn-group{
+        padding-right: 15px;
+    }
+</style>
+<div class="semester">
+<div class="btn-group" style="justify-content: flex-end; width = 100%">
+    <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false">
+        {{#if semester}}
+        Hoc ki : {{semester}}
+        {{/if}}
+    </button>
+    <div class="dropdown-menu">
+        {{#each semesters}}
+
+        <a class="dropdown-item" href="#" data-value="{{this.semester}}">{{this.semester}}</a>
+
+        {{/each}}
+    </div>
+</div>
+
+</div>
+
 <table class="table">
     <thead>
         <tr>
@@ -18,3 +46,28 @@
     {{/each}}
     </tbody>
 </table>
+
+<script>
+
+
+    if (document.readyState == 'loading') {
+        document.addEventListener('DOMContentLoaded', ready)
+    } else {
+        ready()
+    }
+    function ready() {
+        var quantityInputs = document.getElementsByClassName('dropdown-item')
+
+        for (var i = 0; i < quantityInputs.length; i++) {
+            var input = quantityInputs[i]
+            input.addEventListener('click', quantityyChanged)
+        }
+    }
+
+    function quantityyChanged(event) {
+        var input = event.target
+        semester = event.target.getAttribute('data-value');
+        window.location.replace(`http://localhost:3000/student/viewSubject?semester=${semester}`);
+
+    }
+</script>
