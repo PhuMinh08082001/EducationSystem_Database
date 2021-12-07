@@ -21,19 +21,19 @@
             </button>
             {{#if user.studentID}}
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="/student/viewSubject">Xem danh sach mon hoc</a>
-                <a class="dropdown-item" href="/student/regisSub">Dang ki khoa hoc</a>
+                <a class="dropdown-item" href="/student/viewSubject"> My Class List</a>
+                <a class="dropdown-item" href="/student/regisSub">Register New Course</a>
                 
             </div>
             {{else if user.lecturerID}}
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="/lecturer/viewClass">Quản lý lớp học</a>
+                <a class="dropdown-item" href="/lecturer/viewClass">Manage Class</a>
           
             </div>
             {{/if}}
-            {{#if_eq user.fullName 'Khoa Quan Li'}}
+            {{#if_eq user.fullName 'Faculty Manager'}}
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="/subject">Quan li mon hoc</a>
+                <a class="dropdown-item" href="/subject">Manage Subject</a>
             
             
             </div>
@@ -41,7 +41,7 @@
      
             {{else}}
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="/pdt/viewSubject">Xem danh sach mon hoc</a>
+                <a class="dropdown-item" href="/pdt/viewSubject">View Subject List</a>
             
             </div>
             {{/if_eq}}

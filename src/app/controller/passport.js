@@ -40,11 +40,11 @@ let initPassportLocal = () => {
                         }
                     });
                 } else if (role == 'ql') {
-                    let user = { fullName: 'Khoa Quan Li', role: role }
+                    let user = { fullName: 'Faculty Manager', role: role }
                     return done(null, user, null)
 
                 } else if (role == 'pdt') {
-                    let user = { fullName: 'Phong Dao Tao', role: role }
+                    let user = { fullName: 'Tranning Department', role: role }
                     return done(null, user, null)
                 }
             } catch (err) {
