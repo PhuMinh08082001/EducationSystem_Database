@@ -9,6 +9,8 @@
         color: #6c757d!important;
     }
 </style>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v13.0&appId=661349911732816&autoLogAppEvents=1" nonce="uTS1GAhd"></script>
 <div class="container">
 <div class="card" style="width: 30rem; height: 30rem; ">
   
@@ -32,8 +34,47 @@
             <div class="card-link-parent">
                 <a href="/login/pdt" class="card-link" >Training Department</a>
             </div>
+ <div class="card-link-parent">
+            <div class="fb-login-button" data-width="200" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="true" data-use-continue-as="true"></div>
+                 </div>
         </div>
 
- 
+     
+              
+<script> 
+  window . fbAsyncInit = function () { 
+    FB . init ({ 
+      appId       : '{your-app-id}' , 
+      cookie      : true , 
+      xfbml       : true , 
+      version     : '{api-version}' });      
+    
+      
+    FB . AppEvents . logPageView ();  
+
+    FB.getLoginStatus(function(response) {
+  if (response.status === 'connected') {
+    console.log(response.authResponse.accessToken);
+  }
+});
+
+    function checkLoginState () { 
+  FB . getLoginStatus ( function ( response ) { 
+    statusChangeCallback ( response ); }); } 
+      
+  };
+
+FB.api('/me', function(response) {
+    console.log(JSON.stringify(response));
+});
+
+  ( function ( d , s , id ){ var js , fjs = d . getElementsByTagName ( s )[ 0 ]; if ( d . getElementById ( id )) { return ;} 
+     js = d . createElement ( s ); js . id = id ; 
+     js .src = _
+     
+        "https://connect.facebook.net/en_US/sdk.js" ; 
+     fjs . parentNode . insertBefore ( js , fjs ); }( document , 'script' , 'facebook-jssdk' )); </script>
+     
 </div>
+
 </div>
